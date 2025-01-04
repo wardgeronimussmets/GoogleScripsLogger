@@ -5,7 +5,7 @@ function doPost(e) {
   if(!spread_sheet_id){
     return ContentService.createTextOutput("Spread sheet id is not set").setMimeType(ContentService.MimeType.TEXT);
   }
-  const sheet = SpreadsheetApp.openById().getSheetByName("logs");
+  const sheet = SpreadsheetApp.openById(spread_sheet_id).getSheetByName("logs");
 
   // Append log data to the sheet
   sheet.appendRow([data.timestamp, data.logLevel, data.message]);
